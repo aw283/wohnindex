@@ -41,8 +41,13 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <h2 className="mb-2 font-serif text-2xl font-bold text-navy">Ampel-Karte Österreich</h2>
-        <p className="mb-6 text-sm text-stone-500">
-          Klicke einen Bezirk für den Detail-Breakdown. Graue Flächen: im MVP noch ohne Daten.
+        <p className="mb-6 max-w-2xl text-sm text-stone-500">
+          <strong className="text-stone-700">Je höher der Score (0–100), desto attraktiver der Standort gesamt</strong> –
+          gewichtet aus Investment, Lebensqualität und Zukunftsfestigkeit.
+          <span className="text-[#15803d]"> Grün = stark</span>,
+          <span className="text-[#b45309]"> gelb = mittel</span>,
+          <span className="text-[#b91c1c]"> rot = schwach</span>.
+          Klicke einen Bezirk für den Detail-Breakdown; graue Flächen haben im MVP noch keine Daten.
         </p>
         <div className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-6">
           <AustriaMap />
@@ -52,7 +57,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
         <div className="grid gap-6 md:grid-cols-2">
           <RankCard title="Stärkste Standorte" list={top} />
-          <RankCard title="Größtes Potenzial" list={bottom} />
+          <RankCard title="Schwächste Standorte" list={bottom} />
         </div>
         <p className="mt-4 text-xs text-stone-400">
           Hinweis: Im MVP basiert der Score auf den verfügbaren Indikatoren

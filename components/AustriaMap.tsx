@@ -41,10 +41,10 @@ export function AustriaMap() {
         </g>
       </svg>
       <div className="mt-3 flex flex-wrap items-center justify-center gap-4 text-xs text-stone-500">
-        <Legend hex={ampelHex("gruen")} label="Grün ≥ 66" />
-        <Legend hex={ampelHex("gelb")} label="Gelb 33–65" />
-        <Legend hex={ampelHex("rot")} label="Rot < 33" />
-        <Legend hex={AMPEL_NO_DATA_HEX} label="Keine Daten" />
+        <Legend hex={ampelHex("gruen")} label="stark (≥ 66)" />
+        <Legend hex={ampelHex("gelb")} label="mittel (33–65)" />
+        <Legend hex={ampelHex("rot")} label="schwach (< 33)" />
+        <Legend hex={AMPEL_NO_DATA_HEX} label="keine Daten" />
       </div>
     </div>
   );
