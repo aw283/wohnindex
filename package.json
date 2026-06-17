@@ -1,26 +1,46 @@
 {
-  "name": "wohnindex-tmp",
+  "name": "wohnindex-at",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "npx eslint . --ext .ts,.tsx",
+    "ingest:districts": "tsx scripts/ingest/loader-districts.ts",
+    "ingest:immo": "tsx scripts/ingest/loader-immo.ts",
+    "ingest:bevoelkerung": "tsx scripts/ingest/loader-bevoelkerung.ts",
+    "ingest:pendler": "tsx scripts/ingest/loader-pendler.ts",
+    "ingest:geometrie": "tsx scripts/ingest/loader-geometrie.ts",
+    "ingest:all": "tsx scripts/ingest/run-all.ts",
+    "slice": "tsx scripts/build-slice.ts",
+    "demo": "tsx scripts/score-demo.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "adm-zip": "^0.5.17",
     "next": "16.2.9",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "shpjs": "^6.2.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/adm-zip": "^0.5.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/shpjs": "^3.4.7",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.22.4",
+    "typescript": "^5",
+    "vitest": "^2.1.8"
   }
 }

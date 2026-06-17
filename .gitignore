@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# Ingest-Rohdaten-Cache (wird via npm run slice/geo regeneriert; data/*.json ist committet)
+/.cache/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

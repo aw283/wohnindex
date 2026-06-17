@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #1a1a2e;
+  --color-navy-700: #25254a;
+  --color-brand: #e8752a;
+  --color-brand-dark: #c45e18;
+
+  /* Ampel-Motiv durchgängig */
+  --color-ampel-gruen: #16a34a;
+  --color-ampel-gruen-bg: #dcfce7;
+  --color-ampel-gelb: #d97706;
+  --color-ampel-gelb-bg: #fef3c7;
+  --color-ampel-rot: #dc2626;
+  --color-ampel-rot-bg: #fee2e2;
+
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #1c1917;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Ampel-Lichter (kleines Logo-Motiv) */
+.ampel-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .print-break {
+    page-break-inside: avoid;
+  }
 }
