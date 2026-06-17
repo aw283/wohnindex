@@ -29,14 +29,31 @@ export function DistrictSearch({ districts }: { districts: DistrictListItem[] })
 
   return (
     <div className="relative">
-      <input
-        type="search"
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Bezirk suchen … (z. B. Innsbruck, Tirol)"
-        className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-base shadow-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
-        aria-label="Bezirk suchen"
-      />
+      <label htmlFor="bezirk-suche" className="mb-2 block text-sm font-semibold text-white/90">
+        🔎 Bezirk suchen
+      </label>
+      <div className="relative">
+        <svg
+          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+        <input
+          id="bezirk-suche"
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="z. B. Innsbruck, Graz oder Tirol …"
+          className="w-full rounded-xl border-2 border-stone-300 bg-white py-3.5 pl-12 pr-4 text-base text-stone-900 shadow-lg outline-none placeholder:text-stone-400 focus:border-brand focus:ring-2 focus:ring-brand/20"
+          aria-label="Bezirk suchen"
+          autoComplete="off"
+        />
+      </div>
       {nq && (
       <ul className="absolute z-10 mt-2 w-full divide-y divide-stone-100 overflow-hidden rounded-xl border border-stone-200 bg-white shadow-lg">
         {results.map((d) => (
